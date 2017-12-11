@@ -7,7 +7,7 @@ from autobahn.twisted.websocket import WebSocketServerFactory, WebSocketServerPr
 import datetime
 from autobahn.twisted.resource import WebSocketResource
 import MySQLdb
-db=MySQLdb.connect("localhost","root","chaitanya1996*","counselling_site")
+db=MySQLdb.connect("127.0.0.1","root","Goddamnit83!","hjscounsel")
 class SomeServerProtocol(WebSocketServerProtocol):
     def onConnect(self, request):
         print("some request connected {}".format(request))
@@ -108,7 +108,7 @@ if __name__ == "__main__":
 
     root = File(".")
 
-    factory = CounsellingChatFactory(u"ws://192.168.43.54:8080")
+    factory = CounsellingChatFactory(u"ws://52.222.71.165:8080")
     factory.protocol = SomeServerProtocol
     resource = WebSocketResource(factory)
     root.putChild(u"ws", resource)

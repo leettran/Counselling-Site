@@ -20,7 +20,7 @@ class Student(models.Model):
 			
 
 class Counsellor(models.Model):
-	types=(("Emotional","Emotional"),("Academic","Academic"))	
+	types=(("Emotional","Emotional"),("Academic","Academic"),("Business","Business"))	
 	counsellor=models.OneToOneField(User)
 	Type=models.CharField(max_length=30,choices=types)
 	Mobile=models.CharField(max_length=10)

@@ -1,102 +1,102 @@
-
 <!DOCTYPE HTML>
 
 <html>
 <head>
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
 
-<title>
-{% block title %}
-
-{% endblock %}
-</title>
-{% load static %}
-<link rel="icon" href="{% static 'ITW/itbhu.ico' %}" type="image/x-icon">
-
-<link rel="stylesheet" type="text/css" href="{% static 'ITW/pro.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static 'ITW/Background.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static 'ITW/appointment.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static 'ITW/style.css' %}" />
-
-
-
+    {% load static %}
+    <link rel="icon" href="{% static 'ITW/itbhu.ico' %}" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'ITW/pro.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'ITW/Background.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'ITW/appointment.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'ITW/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'ITW/slider.css' %}" />
 </head>
+
 <body>
 <header>
 	<div class="row">
 		<div class="head">
 			<div class="col-2">
-				{% load static %}<img src="{% static 'ITW/logo_img.png' %}" height="130px" width="130px"/>
+			{% load static %}<img src="{% static 'ITW/logo_img.png' %}" height="125px" width="125px"/>
 			</div>
-			<div class="col-7">
-				<center>
-					<ul class="heading">
-						<li><h2 class="comicsans">Counselling Service</h2></li>
-						<li><a class="head" href="http://www.iitbhu.ac.in">IIT Varanasi<br></a></li>
-					</ul>
-				</center>
+			<div class="col-10">
+				<ul class="heading">
+					<li><a class="head" href="https://counsel.hjsbasis.org">COUNSELING AND CONSULTING</a>
+					    <h4 class="arial">P.O. Box 4062, Walnut Creek, CA 94596 &bull; 628-243-0018 &bull; info@hjsfmail.org</h4></li>
+				</ul>
 			</div>
 		</div>
-		<div class="col-2">
-		</div>
-	</div>
-<ul class="topnav" id="myTopnav">
-  <li><a class="active" href="/home">Home</a></li>
-  <li class="dropdown"><a class="dropbtn">Student Support</a>
-	<div class="dropdown-content">
-      <a href="/academic">Academic Support</a>
-      <a href="/emotional">Emotional Counselling</a>
-    </div>
-  </li>
-  <li ><a href="/newstudents" class="dropbtn">New Students</a>
-  </li>
-  <li ><a href="/info" class="dropbtn">Important Info</a>
- 	
-  </li>
- <li><a href="/appointment">Book Appointment</a>
-  </li>
-{% if request.user.is_authenticated %}
-  
-  
-<li><a href="/chat">Counselling Room</a></li>
-<li><a href="/profile">{{ request.user.username }}</a></li>
-<li><a href="/logout">Logout</a></li>
+	</div>	
+    <ul class="topnav" id="myTopnav">
+    {% load static %}
+        <li><a href="/home">Home</a></li>
+        <li class="dropdown"><a class="dropbtn">Services</a> 
+            <div class="dropdown-content">
+                <a href="/business">Business Consulting</a>
+                <a href="/academic">Academic Support</a>
+                <a href="/emotional">Counselling Services</a>
+            </div>
+        </li>
+        <li><a href="/newstudents" class="dropbtn">Enroll</a></li>
+        <li><a href="/info" class="dropbtn">Information</a></li>
+        <li><a href="/appointment">Appointments</a></li>
+
+{% if request.user.is_authenticated %}  
+        <li><a href="/chat">Counsel</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <li><a href="/profile">{{ request.user.username }}</a></li>
+
 {% else %}
-   <li><a href="/login">Login/Signup</a></li>
-	
+        <li><a href="/login">Login</a></li>
+        
 {% endif %}
-  <li class="icon">
-    <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">=</a>
-  </li>
-</ul>
+
+        <li style="float:right"><a href="http://facebook.com"><img src="{% static 'ITW/facebookicon.png' %}" alt="HTML5 Icon" style="width:25px;height:25px;"></a></li>
+        <li style="float:right"><a href="http://linkdin.com"><img src="{% static 'ITW/linkedinicon.png' %}" alt="HTML5 Icon" style="width:25px;height:25px;"></a></li>
+        <li style="float:right"><a href="http://tumblr.com"><img src="{% static 'ITW/tumblricon.png' %}" alt="HTML5 Icon" style="width:25px;height:25px;"></a></li>
+	<li style="float:right"><a href="http://twitter.com"><img src="{% static 'ITW/pidgin.png' %}" alt="HTML5 Icon" style="width:25px;height:25px;"></a></li>
+        <li class="icon"><a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()"></a></li>
+    </ul>
 </header>
+
 {% block im %}
+
 {% endblock %}
+
 <div class="row">
 </div>
-<br>
+
 <div class="separator">
-	<center>We would love to hear from you<br>
-	<a class="button" href="/feedback">Feedback</a>
-	</center></div>
+    <center><a class="button" href="/feedback">Message</a></center>
+    <br>
+    <br>
+    <br>
+</div>
+
 <footer>
-	<div class="foot">	
-		<ul class="linkc">
-		<li><h3>Quick Links</h3></li>
-		<li><a class="footer" href="http://www.iitbhu.ac.in">IIT BHU</a></li>
-		<li><a class="footer" href="#">Dean of Student Affairs</a></li>
-		<li><a class="footer" href="#">Dean of Academic Affairs</a></li>
-		</ul>
-		<div class="bottom-right">
-	<a href="http://www.facebook.com" class="head"><div class="app"></div></a>
+    <div class="w3-row">	
+       	<div class="col-10" background-color="gray">
+	    <center><b>Holeigh J Skyler Foundation</b> | <a href="https://marstonreport.org">Digital Press</a> | <a href="https://midnightcentral.com">Performing Arts</a> | <a href="https://pmtresearch.org">Medical Sciences</a></center>
+	    <center><a>(つ-‘_‘-)つ| Copyright &#169 2017 Holeigh J. Skyler Foundation -- All Rights Reserved</a></center>
 	</div>
-	</div>
+        <div class="col-2" background-color="deep-purple">
+        </div>
+    </div>
 </footer>
+
 {% block script %}
 
 {% endblock %}
+
 <script>
 var slideIndex = 0;
+
 carousel();
+
 function myFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -105,14 +105,17 @@ function myFunction() {
         x.className = "topnav";
     }
 }
+
 function plusDivs(n) {
 	slideIndex += n
 	showDivs();
 }
+
 function currentDiv(n) {
 	slideIndex = n
 	showDivs();
 }
+
 function showDivs() {
   var i;
   var x = document.getElementsByClassName("mySlides");
@@ -128,6 +131,7 @@ function showDivs() {
   x[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " w3-red";
 }
+
 function carousel() {
 	var i;
 	var x = document.getElementsByClassName("mySlides");
@@ -140,10 +144,11 @@ function carousel() {
 	}
 	slideIndex +=1;
 	if (slideIndex > x.length) {slideIndex = 1}
-    x[slideIndex-1].style.display = "block";
-	dots[slideIndex-1].className += " w3-red";
-    setTimeout(carousel, 9000);
+    	        x[slideIndex-1].style.display = "block";
+		dots[slideIndex-1].className += " w3-red";
+    	setTimeout(carousel, 9000);
 }
+
 </script>
 </body>
 </html>

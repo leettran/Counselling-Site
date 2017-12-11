@@ -214,7 +214,7 @@ def feedback(request):
 	return render(request,'feedback.html',)
 
 @login_required
-def myprofile(request):
+def profile(request):
 	stu=auth(request)['user']
 	li=[]
 	profile=[]
@@ -232,7 +232,6 @@ def myprofile(request):
 	return render(request,'appointments.html',{'appointment':li,'profile':profile,'type':utype})
 @login_required
 def ragging(request):
-	
 	if request.method=='POST':
 		From=request.POST['name']
 		Complain=request.POST['complain']
@@ -240,13 +239,13 @@ def ragging(request):
 		msg = MIMEText(Complain)
 	
 		msg['Subject'] = 'Ragging Complaint by %s'% From
-		msg['From'] = 'iitbhu.counselling@gmail.com'
-		msg['To'] = 'chaitanya.bhatia.cse15@itbhu.ac.in'
+		msg['From'] = 'admin@counsel.hjsbasis.org'
+		msg['To'] = 'admin@hjsbasis.org'
 		try:
 			s = smtplib.SMTP('smtp.gmail.com',587)
 			s.ehlo()
 			s.starttls()
-			s.login('iitbhu.counselling@gmail.com','counsel@iitbhu')
+			s.login('lee.tran@hjsfmail.org','counsel@hjsfmail')
 			s.sendmail('iitbhu.counselling@gmail.com', 'chaitanya.bhatia.cse15@itbhu.ac.in', msg.as_string())
 			s.quit()
 			return render(request,'redirect.html',{'title':'Success','message':"Your Complaint has been registered and action will be taken as soon as Possible"})
@@ -258,3 +257,8 @@ def emotional(request):
 
 def academic(request):
         return render(request,"Academic Counselling.html")
+
+def business(request):
+        return render(request,"Business Counselling.html")
+
+

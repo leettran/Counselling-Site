@@ -4,19 +4,25 @@ Appointment
 {% endblock %}
 {% block im %}
 <!-- insert form action at the time of backend -->
-<br><br><br><br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
 {% if rejected %}
-<center><b>The Requested Timeslot is already booked</b></center>
+<center><b>The requested timeslot is already booked</b></center>
 {% else %}
 {% if booked %}
 <center><b>Appointment Booked</b></center>
 {% else %}
-<form action="/appointment/" method="POST">{% csrf_token %}
+<form action="/appointment/" method="POST">
+{% csrf_token %}
 <center>
-	<label for="Type">Counselling Type:</label><br>
+	<label for="Type">Counselling Request:</label><br>
 	<select id="Type" name="type">
 		<option value="Emotional">Emotional</option>
 		<option value="Academic">Academic</option>
+		<option value="Business">Business</option>
 	</select>
 	<br><br>
 	<label>Date:</label><br>

@@ -10,7 +10,7 @@ CHAT
     window.addEventListener("load", function() {
         
         // create websocket instance
-        var mySocket = new WebSocket("ws://192.168.43.54:8080/ws");
+        var mySocket = new WebSocket("ws://172.31.81.176:8080/ws");
         var sender= "{{sender}}"
 		var to="{{to}}"
 		mySocket.onopen=function(){
@@ -46,13 +46,10 @@ CHAT
 		
 				a.insertBefore(di,bfr);
 				a.scrollTop=a.scrollHeight;
-	
 				
             	e.preventDefault()
 				}
 		});
-        		
-
     });
 </script>
 

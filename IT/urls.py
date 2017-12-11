@@ -12,9 +12,10 @@ urlpatterns= [
 	url(r'^logout/$',views.user_logout,name='logout'),
 	url(r'^newstudents/$',views.newstudents,name='newstudents'),
 	url(r'^map/$',views.map,name='map'),
-	url(r'^profile/$',views.myprofile,name='myprofile'),
+	url(r'^profile/$',views.profile,name='profile'),
 	url(r'^ragging/$',views.ragging,name="ragging"),
 	url(r'^chat/$',views.chat,name="chat"),
 	url(r'^emotional/$',views.emotional,name="emotional"),
 	url(r'^academic/$',views.academic,name="academic"),
+        url(r'^business/$',views.business,name="business"),
 ]

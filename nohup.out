@@ -1,0 +1,21 @@
+/opt/bitnami/python/lib/python2.7/site-packages/setuptools-20.9.0-py2.7.egg/pkg_resources/__init__.py:1268: UserWarning: /opt/bitnami/.tmp is writable by group/others and vulnerable to attack when used with get_resource_filename. Consider a more secure location (set with .set_extraction_path or the PYTHON_EGG_CACHE environment variable).
+Traceback (most recent call last):
+  File "server3.py", line 10, in <module>
+    db=MySQLdb.connect("127.0.0.1","root","YVAcZ3eVWFA4","hjscounsel")
+  File "/opt/bitnami/python/lib/python2.7/site-packages/MySQL_python-1.2.3rc1-py2.7-linux-x86_64.egg/MySQLdb/__init__.py", line 81, in Connect
+    
+  File "/opt/bitnami/python/lib/python2.7/site-packages/MySQL_python-1.2.3rc1-py2.7-linux-x86_64.egg/MySQLdb/connections.py", line 188, in __init__
+_mysql_exceptions.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+/opt/bitnami/python/lib/python2.7/site-packages/setuptools-20.9.0-py2.7.egg/pkg_resources/__init__.py:1268: UserWarning: /opt/bitnami/.tmp is writable by group/others and vulnerable to attack when used with get_resource_filename. Consider a more secure location (set with .set_extraction_path or the PYTHON_EGG_CACHE environment variable).
+2017-12-06 04:31:26+0000 [-] Log opened.
+2017-12-06 04:31:26+0000 [-] Site starting on 8080
+2017-12-06 04:31:26+0000 [-] Starting factory <twisted.web.server.Site instance at 0x7f0d0cdef200>
+2017-12-06 04:33:20+0000 [-] "67.180.33.82" - - [06/Dec/2017:04:33:20 +0000] "GET /index.php HTTP/1.1" 404 145 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+2017-12-06 04:33:20+0000 [-] "67.180.33.82" - - [06/Dec/2017:04:33:20 +0000] "GET /favicon.ico HTTP/1.1" 404 145 "http://52.222.71.165:8080/index.php" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+2017-12-06 04:34:20+0000 [-] Timing out client: IPv4Address(TCP, '67.180.33.82', 63792)
+2017-12-06 13:35:13+0000 [-] "58.220.41.13" - - [06/Dec/2017:13:35:13 +0000] "GET /manager/html HTTP/1.1" 404 145 "-" "Mozilla/3.0 (compatible; Indy Library)"
+2017-12-06 13:57:15+0000 [-] "208.113.204.247" - - [06/Dec/2017:13:57:15 +0000] "GET / HTTP/1.1" 200 2315 "-" "python-requests/2.13.0"
+2017-12-06 14:40:22+0000 [-] Received SIGTERM, shutting down.
+2017-12-06 14:40:22+0000 [twisted.web.server.Site] (TCP Port 8080 Closed)
+2017-12-06 14:40:22+0000 [-] Stopping factory <twisted.web.server.Site instance at 0x7f0d0cdef200>
+2017-12-06 14:40:22+0000 [-] Main loop terminated.

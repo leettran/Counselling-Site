@@ -3,20 +3,27 @@
 Feedback
 {% endblock %}
 {% block im %}
-<br><br><br><br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <form id="feedback_form" action="/feedback/" method="POST">
 {% csrf_token %}
 <center>
-	<h2>Please Submit your feedback</h2>
+	<h2>Submit Feedback</h2>
 	<br>
 
 	<textarea  name="feedback" placeholder="Feedback" rows=30 cols=50 required></textarea>
-	<br><br>
+	<br>
+	<br>
 	<input type="submit" value="Submit">
 
 	<br>
 </center>
 </form>
 	
-<br><br><br>
+<br>
+<br>
+<br>
 {% endblock %}
